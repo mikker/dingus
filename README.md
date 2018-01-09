@@ -9,7 +9,7 @@ var Dingus = require('dingus')
 var dingus = new Dingus({ preventDefault: true });
 
 // Listen to specific events (PREV, NEXT, START_STOP, BLANK_SCREEN)
-dingus.on(Dingus.PREV, function() {
+dingus.on(Dingus.PREV, function(event, eventName) {
   // err'body to the left
 });
 
@@ -19,8 +19,9 @@ dingus.on('*', cb);
 // remove it again with
 dingus.off('*', cb);
 
-function cb(event) {
-  // event === Dingus.PREV etc, etc
+function cb(event, eventName) {
+  // event.preventDefault() etc, etc
+  // eventName === Dingus.PREV etc, etc
 }
 
 // remove `keydown` listener from window
