@@ -1,6 +1,6 @@
-<center><h2><img src='https://s3.brnbw.com/r400-gallery-6FIvjLm7JI.png' width='77' /><br />dingus</h2></center>
+<h2 align='center'><img src='https://s3.brnbw.com/r400-gallery-6FIvjLm7JI.png' width='77' /><br />dingus</h2>
 
-**dingus** listens to and emits presentation related keyboard events eg. [<-], [->], [space] or the buttons on one of those wireless presenter dinguses.
+**dingus** listens to and emits presentation related keyboard events eg. `[<-]`, `[->]`, `[space]` or the buttons on one of those wireless presenter dinguses.
 
 Behind the scenes, **dingus** is a [nanobus](https://github.com/choojs/nanobus) and so responds to everything that a nanobus does.
 
@@ -25,7 +25,7 @@ function cb(event) {
 }
 
 // remove `keydown` listener from window
-dingus.removeListener();
+dingus.remove();
 ```
 
 ## License
