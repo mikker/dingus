@@ -53,6 +53,7 @@ var keysToEvents = {
   34: Dingus.NEXT, // pg down
   39: Dingus.NEXT, // right arrow
 
+  27: Dingus.START_STOP, // Esc
   116: Dingus.START_STOP, // F5
 
   190: Dingus.BLANK_SCREEN // period (.)
