@@ -1,0 +1,29 @@
+{
+  "name": "dingus",
+  "version": "0.9.0",
+  "description": "React to presentation clicker dingus events",
+  "main": "index.js",
+  "scripts": {
+    "build:dist": "browserify index.js -d --s dingus > dist/dingus.js",
+    "build:min": "uglifyjs dist/dingus.js -o dist/dingus.min.js",
+    "build": "npm run build:dist && npm run build:min",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikker/dingus.git"
+  },
+  "author": "Mikkel Malmberg <mikkel@brnbw.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikker/dingus/issues"
+  },
+  "homepage": "https://github.com/mikker/dingus#readme",
+  "dependencies": {
+    "nanobus": "^4.3.2"
+  },
+  "devDependencies": {
+    "browserify": "^15.0.0",
+    "uglify-js": "^3.3.5"
+  }
+}
