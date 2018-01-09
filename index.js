@@ -2,27 +2,27 @@ var nanobus = require("nanobus");
 
 module.exports = dingus;
 
-function dingus(opts) {
+function dingus(opts, w = window) {
   opts = Object.assign(defaultOptions, opts);
 
   var bus = nanobus("dingus");
 
-  window.addEventListener("keydown", keyDown);
+  w.addEventListener("keydown", keyDown);
 
-  bus.removeListener = function() {
-    window.removeEventListener("keydown", keyDown);
+  bus.remove = function() {
+    w.removeEventListener("keydown", keyDown);
   };
 
   return bus;
 
   function keyDown(event) {
-    const eventName = keysToEvents[event.keyCode];
+    const action = keysToEvents[event.keyCode];
 
-    if (!eventName) return;
+    if (!action) return;
 
     if (opts.preventDefault) event.preventDefault();
 
-    bus.emit(eventName, event);
+    bus.emit(action, event, action);
   }
 }
 
