@@ -7,10 +7,11 @@ Behind the scenes, **dingus** is a [nanobus](https://github.com/choojs/nanobus) 
 ## Usage
 
 ```js
-var dingus = require('dingus')({ preventDefault: true });
+var Dingus = require('dingus')
+var dingus = new Dingus({ preventDefault: true });
 
 // Listen to specific events (PREV, NEXT, START_STOP, BLANK_SCREEN)
-dingus.on(dingus.PREV, function() {
+dingus.on(Dingus.PREV, function() {
   // err'body to the left
 });
 
@@ -18,14 +19,14 @@ dingus.on(dingus.PREV, function() {
 dingus.on('*', cb);
 
 // remove it again with
-dingus.removeListener('*', cb);
+dingus.off('*', cb);
 
 function cb(event) {
-  // event === dingus.PREV etc, etc
+  // event === Dingus.PREV etc, etc
 }
 
 // remove `keydown` listener from window
-dingus.remove();
+dingus.destroy();
 ```
 
 ## License

@@ -1,15 +1,15 @@
 var tape = require("tape");
-var create = require("./");
+var Dingus = require("./");
 
 tape("dingus", function(t) {
   t.test("adds event listener on window", function(t) {
     t.plan(2);
 
     var mockWindow = new MockWindow();
-    var dingus = create({}, mockWindow);
-    dingus.on(create.PREV, (event, action) => {
+    var dingus = new Dingus({}, mockWindow);
+    dingus.on(Dingus.PREV, (event, action) => {
       t.equal(event.constructor, MockEvent);
-      t.equal(action, create.PREV);
+      t.equal(action, Dingus.PREV);
     });
     mockWindow.fireKeyCode(8);
   });
@@ -18,8 +18,8 @@ tape("dingus", function(t) {
     t.plan(1);
 
     var mockWindow = new MockWindow();
-    var dingus = create({}, mockWindow);
-    dingus.on(create.PREV, event => {
+    var dingus = new Dingus({}, mockWindow);
+    dingus.on(Dingus.PREV, event => {
       t.true(event.prevented);
     });
     mockWindow.fireKeyCode(8);
@@ -29,11 +29,11 @@ tape("dingus", function(t) {
     t.plan(2)
 
     var mockWindow = new MockWindow();
-    var dingus = create({}, mockWindow);
+    var dingus = new Dingus({}, mockWindow);
 
     t.equal(mockWindow.listeners.length, 1)
 
-    dingus.remove()
+    dingus.destroy()
 
     t.equal(mockWindow.listeners.length, 0)
   })
