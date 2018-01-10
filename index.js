@@ -6,7 +6,9 @@ var defaultOptions = {
   preventDefault: true
 };
 
-function Dingus(options = {}, w = window) {
+function Dingus(options, w) {
+  w = w || window
+
   this.options = Object.assign({}, defaultOptions, options);
   this._bus = nanobus("dingus");
   this._w = w;
