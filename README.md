@@ -2,6 +2,8 @@
 
 **dingus** listens to and emits presentation related keyboard events eg. `[<-]`, `[->]`, `[space]` or the buttons on one of those wireless presenter dinguses.
 
+## See also [MAXIMUM OVERBUSINESS](https://github.com/mikker/maximum-overbusiness) – a tool to build presentations in React
+
 ## Usage
 
 ```js
